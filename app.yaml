@@ -19,7 +19,7 @@ handlers:
 - url: /html
   static_dir: html
   application_readable: true
-- url: /.*
-  script: main.app
 - url: /stylesheets
   static_dir: stylesheets
+- url: /.*
+  script: main.app

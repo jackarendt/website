@@ -1,0 +1,31 @@
+/** Base CSS file. Defaults for website. */
+body {
+  background-color: #ffffff;
+  padding-left: 0.625em;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+
+h1, h2, h3, p, img, div {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 4em;
+  color: black;
+}
+
+.logo {
+  height: 40pt;
+  width: 40pt;
+  margin: 1.25em 0 1.25em 0;
+}
+
+.title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  color: #2e576d;
+}
