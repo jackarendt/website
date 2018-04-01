@@ -2,8 +2,24 @@ runtime: python
 api_version: 1
 threadsafe: true
 
+runtime_config:
+  python_version: 3
+
+manual_scaling:
+  instances: 1
+
+# Comment out when pushing to prod
+resources:
+ cpu: .5
+ memory_gb: 0.18
+ disk_size_gb: 10
+
 handlers:
-- url: /static
-  static_dir: static
+# Able to read html file to update values.
+- url: /html
+  static_dir: html
+  application_readable: true
 - url: /.*
   script: main.app
+- url: /stylesheets
+  static_dir: stylesheets
