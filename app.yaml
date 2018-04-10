@@ -1,9 +1,6 @@
-runtime: python
+runtime: python27
 api_version: 1
 threadsafe: true
-
-runtime_config:
-  python_version: 3
 
 manual_scaling:
   instances: 1
@@ -21,5 +18,7 @@ handlers:
   application_readable: true
 - url: /stylesheets
   static_dir: stylesheets
+- url: /scripts
+  static_dir: scripts
 - url: /.*
   script: main.app

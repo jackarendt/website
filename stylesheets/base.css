@@ -1,8 +1,8 @@
 /** Base CSS file. Defaults for website. */
 body {
   background-color: #ffffff;
-  padding-left: 0.75em;
-  padding-right: 0.75em;
+  padding-left: 2vw;
+  padding-right: 2vw;
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
 }
@@ -39,7 +39,15 @@ h4 {
   font-size: 1.5em;
   font-family: 'Roboto Mono', sans-serif;
   margin: 0;
+  font-weight: 400;
   margin-bottom: 0.5em;
+}
+
+h5 {
+  font-size: 1.8em;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
 }
 
 /** Text uses Raleway. */
@@ -48,6 +56,20 @@ p {
   color: black;
   font-weight: 300;
   font-size: 1.25em;
+}
+
+input {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.25em;
+  font-weight: 300;
+  color: black;
+  -webkit-appearance: none;
+  border-radius: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 .logo {
@@ -63,7 +85,10 @@ p {
 
 .section-div {
   max-width: 60em;
+  margin-top: 2em;
   margin-bottom: 2em;
+  clear: both;
+  float: none;
 }
 
 .header-icon {
@@ -122,8 +147,46 @@ p {
   color: #317d84;
 }
 
+.read-more-button:focus {
+  outline: none;
+}
+
+.experiences {
+  padding-left: 15px;
+}
+
 .history-list {
+  padding-left: 1em;
   padding-bottom: 1em;
+  list-style-type: none;
+  position: relative;
+}
+
+.history-list:after {
+  content: url('https://storage.googleapis.com/jackarendt-website/img/circle.svg');
+  position: absolute;
+  left: -20px;
+  width: 25px;
+  height: 25px;
+  top: 15px;
+  margin-top: 20px;
+}
+
+.history-list:before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  border-left: 4px solid #2e576d;
+  height: 100%;
+  width: 1px;
+}
+
+.history-list:first-child:before {
+  top: 35px;
+}
+
+.history-list:last-child:before {
+  height: 35px;
 }
 
 dl.skills {
@@ -131,7 +194,7 @@ dl.skills {
   display: flex;
   background: white;
   flex-direction: column;
-  width: 100%;
+  width: calc(100% - 200px);
   max-width: 45em;
   position: relative;
   margin-bottom: 0;
@@ -196,4 +259,261 @@ dl.skills {
 
 .item-7:after {
   background-color: #0c1e20;
+}
+
+.projects-container {
+  margin: 0.5em 0 1.5em 0;
+}
+
+.projects {
+  width: 25vw;
+  height: 25vw;
+  max-width: 20em;
+  max-height: 20em;
+  float: left;
+  text-align: left;
+  border: none;
+  font-size: 16px;
+}
+
+.projects:focus {
+  outline: none;
+}
+
+.projects-content {
+  padding: 2em 0.75em 0.75em 0.75em;
+  position: relative;
+  margin: auto;
+}
+
+.project-image {
+  width: 7.5vw;
+  height: 7.5vw;
+  max-width: 6em;
+  max-height: 6em;
+  margin: 0 auto 0 auto;
+  display: block;
+}
+
+.projects.dark {
+  background-color: #e5e5e5;
+}
+
+.projects.light {
+  background-color: #f9f9f9;
+}
+
+.projects:hover {
+  background-color: #dbdbdb;
+}
+
+.rounded-corners {
+  border-radius: 8px;
+}
+
+.more-text {
+  font-size: 2.4em;
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+.contact-description {
+  width: calc(50% - 1.5em);
+  float: left;
+  padding: 1.5em 1.5em 0 0;
+}
+
+.contact-form {
+  width: calc(50% - 1.5em);
+  float: left;
+  padding: 1.5em 0 0 1.5em;
+  box-shadow: none;
+}
+
+.contact-form-input {
+  margin-bottom: 0.75em;
+  background: #f9f9f9;
+  padding: 5px;
+  width: 100%;
+  border: #b4b4b4 1px solid;
+}
+
+.contact-form-input:focus {
+  outline: none;
+  border-color: #2e576d;
+}
+
+
+textarea.contact-form-input {
+  resize: none;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.25em;
+  font-weight: 300;
+  height: 10em;
+  box-shadow: none;
+}
+
+.contact-form-submit {
+  background: #2e576d;
+  width: 60%;
+  padding: 5px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.25em;
+  color: white;
+  border-radius: 4px;
+  height: 2em;
+  margin: auto;
+  border: none;
+  -webkit-appearance: none;
+}
+
+.contact-form-submit:hover {
+  background: #317d84;
+}
+
+.contact-form-submit:focus {
+  outline: none;
+}
+
+.contact-button {
+  float: left;
+  height: 48px;
+  width: 48px;
+  margin-right: 2em;
+  border: none;
+  font-size: 16px;
+}
+
+.contact-button:focus {
+  outline: none;
+}
+
+.contact-buttons {
+  clear: both;
+  list-style-type: none;
+  -webkit-padding-start: 0;
+}
+
+#instagram {
+  background: url('https://storage.googleapis.com/jackarendt-website/img/instagram-icon.svg') 0 0;
+}
+
+/* #instagram:hover {
+  background: url('https://storage.googleapis.com/jackarendt-website/img/instagram-sprite.png') -48px 0;
+} */
+
+#linkedin {
+  background: url('https://storage.googleapis.com/jackarendt-website/img/linkedin-icon.svg') 0 0;
+}
+
+/* #linkedin:hover {
+  background: url('https://storage.googleapis.com/jackarendt-website/img/linkedin-sprite.png') -48px 0;
+} */
+
+#email {
+  background: url('https://storage.googleapis.com/jackarendt-website/img/email-icon.svg') 0 0;
+}
+
+/* #email:hover {
+  background: url('https://storage.googleapis.com/jackarendt-website/img/email-sprite.png') -48px 0;
+} */
+
+#github {
+  background: url('https://storage.googleapis.com/jackarendt-website/img/github-icon.svg') 0 0;
+}
+
+/* #github:hover {
+  background: url('https://storage.googleapis.com/jackarendt-website/img/github-sprite.png') -48px 0;
+} */
+
+.footer {
+  clear: both;
+  height: 5em;
+}
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+  h5 {
+    font-size: 1.5em;
+  }
+
+  .projects {
+    width: 31vw;
+    height: 31vw;
+  }
+
+  .projects-content {
+    padding-top: 0.5em;
+  }
+
+  .project-description {
+    font-size: 1em;
+  }
+
+  .contact-description {
+    float: none;
+    width: 100%;
+  }
+
+  .contact-form {
+    padding: 5em 0 0 0;
+    width: calc(100% - 10px);
+    float: none;
+  }
+}
+
+@media only screen
+and (max-device-width : 767px) {
+  .contact-description {
+    float: none;
+    position: relative;
+    width: 100%;
+    padding: 0;
+  }
+
+  .contact-form {
+    padding: 5em 0 0 0;
+    float: none;
+    position: relative;
+    width: calc(100% - 10px);
+  }
+
+  .contact-form-input {
+    padding: 5px;
+  }
+
+  .contact-buttons {
+    text-align: center;
+  }
+
+  .section-div {
+    max-width: 96vw;
+  }
+
+  .header-title {
+    font-size: 1.5em;
+  }
+
+  .date-span {
+    display: block;
+    padding-left: 0em;
+  }
+
+  .projects {
+    float: none;
+    width: 92vw;
+    height: 92vw;
+    max-width: none;
+    min-width: none;
+  }
+
+  .project-image {
+    width: 25vw;
+    height: 25vw;
+  }
+
+  dl.skills {
+    width: calc(92vw - 200px);
+  }
 }
