@@ -11,6 +11,10 @@ resources:
  memory_gb: 0.18
  disk_size_gb: 10
 
+libraries:
+  - name: lxml
+    version: 3.7.3
+
 handlers:
 # Able to read html file to update values.
 - url: /html
@@ -20,5 +24,11 @@ handlers:
   static_dir: stylesheets
 - url: /scripts
   static_dir: scripts
+- url: /data
+  static_dir: data
+  application_readable: true
+- url: /templates
+  static_dir: templates
+  application_readable: true
 - url: /.*
   script: main.app

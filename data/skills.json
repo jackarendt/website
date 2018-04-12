@@ -1,0 +1,62 @@
+{
+  "languages": [
+    {
+      "name" : "Objective-C",
+      "percentage" : 99
+    },
+    {
+      "name" : "Swift",
+      "percentage" : 97
+    },
+    {
+      "name" : "Python",
+      "percentage" : 75
+    },
+    {
+      "name" : "C++",
+      "percentage" : 70
+    },
+    {
+      "name" : "JavaScript",
+      "percentage" : 65
+    },
+    {
+      "name" : "HTML",
+      "percentage" : 50
+    },
+    {
+      "name" : "CSS",
+      "percentage" : 50
+    }
+  ],
+  "frameworks": [
+    {
+      "name" : "iOS",
+      "percentage" : 99
+    },
+    {
+      "name" : "Git",
+      "percentage" : 85
+    },
+    {
+      "name" : "TensorFlow",
+      "percentage" : 80
+    },
+    {
+      "name" : "Blaze",
+      "percentage" : 70
+    },
+    {
+      "name" : "macOS",
+      "percentage" : 55
+    },
+    {
+      "name" : "Node.js",
+      "percentage" : 50
+    },
+    {
+      "name" : "Illustrator",
+      "percentage" : 40
+    }
+  ]
+}

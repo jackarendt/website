@@ -1,0 +1,101 @@
+[
+  {
+    "name" : "Google X",
+    "employer" : "Google X",
+    "type" : "20% Project",
+    "date" : "02/18 - Present",
+    "languages" : [
+      "C++",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "frameworks" : [
+      "Blaze",
+    ],
+    "image_url" : "/projects/googlex.png",
+    "round_corners" : false,
+    "snippet" : "Helped modernize the front end for a new moonshot at Google X.",
+    "description" : [
+      "Helped modernize the frontend for an ML visualization tool. This involved improving load",
+			"time, browser compatibility, and adding much needed features to visualize models."
+    ]
+  },
+  {
+    "name" : "Pacman AI",
+    "employer" : "",
+    "type" : "Personal Project",
+    "date" : "11/17 - Present",
+    "languages" : [
+      "Python",
+      "Objective-C++",
+      "C++",
+      "Swift"
+    ],
+    "frameworks" : [
+      "TensorFlow",
+      "macOS",
+      "git"
+    ],
+    "image_url" : "/projects/pacman.png",
+    "round_corners" : false,
+    "snippet" : "Trained a vision and OCR model to recognize the game board.",
+    "description" : [
+      "After taking multiple online courses about machine learning, I set out to create my own",
+			"ML project. This project started because of a disagreement I had with my girlfriend about",
+      "what was the optimal strategy when playing Pacman.",
+      "\n"
+      "My initial approach was to split the game board up into 28x36 tiles consisting of 8x8 tiles.",
+      "Frankly, I chose this approach because I didn't know any better. I had read about the window",
+      "sliding method in an article and thought the approach would work better. I wrote a macOS app",
+      "to launch Pacman on an emulator (OpenEmu), and take a screenshot of the game window 11 times",
+      "per second. After processing the image and resizing it, I run a tiling algorithm to split",
+      "the 224x288 image into 1008 8x8 images. From there, the 1008 images would be classified into",
+      "14 different classes. The inference was all done in C++ using TensorFlow. From there, I",
+      "would pass my 1008 classified tiles to my RL agent. Currently, I have an overall F1 score of",
+      "0.96, and I'm currently in the process of designing the RL agent, but I'm leaning towards an",
+      "RNN, and using policy gradients to train.",
+      "\n",
+      "One benefit of using window sliding was that I was easily able to create an OCR model. The",
+      "OCR model required half as many images to train as the tile classifier model, and has an",
+      "overall F1 score of 0.99.",
+      "\n",
+      "Overall, I would have used a ConvNet from the getgo and not bother with the OCR or tile",
+      "classifier model, but I'm grateful that I learned so much in the process. I also learned an",
+      "extremely painful lesson during training: Have consistent labels. As I started classifying,",
+      "my internal rules for what was a wall, what was a ghost, and what was just a mainly blank",
+      "tile changed frequently. With the OCR model I ran into problems when classfiying 0's or O's.",
+      "Reclassfiying the tiles by hand took a lot of time, and was a constant source of",
+      "frustration.",
+      "\n",
+      "I look forward to finishing my agent, and using the new strategies to beat my friends at",
+      "Pacman."
+    ]
+  },
+  {
+    "name" : "Gboard",
+    "employer" : "Google",
+    "type" : "Full Time Job",
+    "date" : "09/16 - Present",
+    "languages" : [
+      "Objective-C",
+      "Objective-C++",
+      "Python",
+      "SQL",
+      "C++",
+      "Swift"
+    ],
+    "frameworks" : [
+      "iOS",
+      "Blaze",
+      "Mercurial (hg)",
+    ],
+    "image_url" : "/projects/gboard.png",
+    "round_corners" : true,
+    "snippet" : "When working on Gboard, I found a good use for the Objective-C runtime.",
+    "description" : [
+      "Helped modernize the frontend for an ML visualization tool. This involved improving load",
+			"time, browser compatibility, and adding much needed features to visualize models."
+    ]
+  },
+]
