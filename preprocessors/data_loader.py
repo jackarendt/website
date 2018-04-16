@@ -17,8 +17,17 @@ def target_experience(job_url_parameter):
   if job_url_parameter is None:
     return None
 
-  jobs = load_experience_file()
-  for exp in jobs:
-    if exp["urlname"].lower() == job_url_parameter.lower():
-      return exp
-  return None
+  return _target_item(load_experience_file(), job_url_parameter)
+
+def target_project(project_url_parameter):
+  if project_url_parameter is None:
+    return None
+
+  return _target_item(load_projects_file(), project_url_parameter)
+
+
+def _target_item(data, target_url_parameter):
+    for item in data:
+      if item["urlname"].lower() == target_url_parameter.lower():
+        return item
+    return None

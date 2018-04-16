@@ -1,5 +1,6 @@
 import data_loader
 import storage
+import sys
 from lxml import html, etree
 from flask import render_template, render_template_string
 
@@ -46,7 +47,7 @@ def render_skills_template(template):
   template_html += _render_skill_template(data['frameworks'])
   return template_html
 
-def render_projects_grid_template(template, max_grid_items, show_more_button=False):
+def render_projects_grid_template(template, max_grid_items=sys.maxint, show_more_button=False):
   """
     Renders the project grid template for a given number of projects.
     param template: the template to render.
@@ -72,6 +73,8 @@ def render_projects_grid_template(template, max_grid_items, show_more_button=Fal
                                      round_corners=round_corners,
                                      title=title,
                                      snippet=snippet)
+
+    print template_html
 
   if show_more_button:
     with open('html/more_button.html') as f:

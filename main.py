@@ -38,6 +38,20 @@ def experience():
   html = storage.replace_bucket_name(html)
   return html
 
+@app.route('/projects')
+def projects():
+  """Loads the projects page either for a specific page, or all projects."""
+  project = data_loader.target_project(request.args.get('project'))
+  if project is None:
+    with open('html/projects.html') as f:
+      html = f.read()
+      projects = render.render_projects_grid_template('projects_template.html')
+      html = render.add_html_elements_inside_node(html, 'div', 'projects-container', projects)
+      html = storage.replace_bucket_name(html)
+    return html
+
+  # TODO: load specific project template.
+
 @app.errorhandler(500)
 def server_error(e):
   """Log the exception, and send back a custom error page."""

@@ -185,5 +185,128 @@
         "TODO: Add Description"
       ]
     ]
+  },
+  {
+    "name" : "This Website",
+    "employer" : "",
+    "type" : "Personal Project",
+    "date" : "03/18 - Present",
+    "languages" : [
+      "Python",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "frameworks" : [
+      "Flask",
+      "Git",
+      "lxml"
+    ],
+    "image_url" : "/img/logo.svg",
+    "round_corners" : false,
+    "snippet" : "My second crack at a personal website. This time it's server side rendered, and no bootstrap.",
+    "link" : "/projects?project=website",
+    "urlname" : "website",
+    "description" : [
+      [
+        "TODO: Add Description"
+      ]
+    ]
+  },
+  {
+    "name" : "mVisa",
+    "employer" : "Visa Inc.",
+    "type" : "Full Time Job",
+    "date" : "10/15 - 09/16",
+    "languages" : [
+      "Swift"
+    ],
+    "frameworks" : [
+      "iOS",
+      "Git",
+      "CocoaPods",
+      "Parse"
+    ],
+    "image_url" : "/projects/mvisa.png",
+    "round_corners" : true,
+    "snippet" : "I was an iOS engineer responsible for building out a customizable mPOS experience.",
+    "link" : "/projects?project=mvisa",
+    "urlname" : "mvisa",
+    "description" : [
+      [
+        "TODO: Add Description"
+      ]
+    ]
+  },
+  {
+    "name" : "Sierra Valley",
+    "employer" : "",
+    "type" : "Personal Project",
+    "date" : "11/15 - 04/16",
+    "languages" : [
+      "Swift"
+    ],
+    "frameworks" : [
+      "iOS",
+      "Git",
+      "SpriteKit"
+    ],
+    "image_url" : "/projects/sierravalley.svg",
+    "round_corners" : true,
+    "snippet" : "My first crack at a game, an infinite runner with an objective of climbing a mountain.",
+    "link" : "/projects?project=sierravalley",
+    "urlname" : "sierravalley",
+    "description" : [
+      [
+        "TODO: Add Description"
+      ]
+    ]
+  },
+  {
+    "name" : "Odds Are",
+    "employer" : "",
+    "type" : "Personal Project",
+    "date" : "01/15 - 08/15",
+    "languages" : [
+      "Swift"
+    ],
+    "frameworks" : [
+      "iOS",
+      "Git",
+      "Parse"
+    ],
+    "image_url" : "/projects/oddsare.svg",
+    "round_corners" : true,
+    "snippet" : "I was the lead developer of a social media platform designed around daring your friends.",
+    "link" : "/projects?project=oddsare",
+    "urlname" : "oddsare",
+    "description" : [
+      [
+        "TODO: Add Description"
+      ]
+    ]
+  },
+  {
+    "name" : "Pipeline",
+    "employer" : "",
+    "type" : "Personal Project",
+    "date" : "12/14 - 03/15",
+    "languages" : [
+      "Objective-C"
+    ],
+    "frameworks" : [
+      "iOS",
+      "Git"
+    ],
+    "image_url" : "/projects/pipeline.png",
+    "round_corners" : true,
+    "snippet" : "A puzzle game modeled after \"Connect the Pipes.\" My first E2E game with no oversight.",
+    "link" : "/projects?project=pipeline",
+    "urlname" : "pipeline",
+    "description" : [
+      [
+        "TODO: Add Description"
+      ]
+    ]
   }
 ]

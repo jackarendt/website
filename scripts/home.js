@@ -17,7 +17,7 @@ $(document).ready(function() {
   });
 
   const hash = window.location.hash;
-  if (hash != null) {
+  if (hash != null && hash.length > 0) {
     $('html, body').animate({
       scrollTop: $(hash).offset().top
     }, 500);

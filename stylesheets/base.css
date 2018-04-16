@@ -273,14 +273,15 @@ dl.skills {
 .projects {
   width: 25vw;
   height: 25vw;
-  max-width: 20em;
-  max-height: 20em;
   float: left;
   text-align: left;
   border: none;
   font-size: 1em;
   -webkit-appearance: none;
   text-decoration: none;
+  align-items: flex-start;
+  box-sizing: border-box;
+  display: inline-block;
 }
 
 .projects:focus {
@@ -303,11 +304,11 @@ dl.skills {
 }
 
 .projects.dark {
-  background-color: #e5e5e5;
+  background: #e5e5e5;
 }
 
 .projects.light {
-  background-color: #f9f9f9;
+  background: #f9f9f9;
 }
 
 .projects:hover {
@@ -502,8 +503,14 @@ and (max-device-width : 767px) {
     float: none;
     width: 92vw;
     height: 92vw;
-    max-width: none;
-    min-width: none;
+  }
+
+  .projects-content {
+    padding-top: 3em;
+  }
+
+  a:-webkit-any-link {
+    color: inherit;
   }
 
   .project-image {
