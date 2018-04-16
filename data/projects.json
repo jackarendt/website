@@ -162,6 +162,7 @@
     "snippet" : "I had 6 weeks to design, develop, and test a demo app for a business presentation.",
     "link" : "/projects?project=tallied",
     "urlname" : "tallied",
+    "external_link" : "",
     "description" : [
       [
         "I was contracted initially to help consult with a business pitch, but ended up building a",
@@ -194,7 +195,7 @@
     "snippet" : "I took an app that wasn't even using ARC and redesigned it inside and out.",
     "link" : "/projects?project=performsource",
     "urlname" : "performsource",
-    "extenral_link" : "https://itunes.apple.com/us/app/visa-performsource-cost-savings-calculator-email-version/id533284288?mt=8",
+    "external_link" : "https://itunes.apple.com/us/app/visa-performsource-cost-savings-calculator-email-version/id533284288?mt=8",
     "description" : [
       [
         "PerformSource is a sales tool application to convince businesses to sign up for a",
@@ -363,6 +364,7 @@
     "snippet" : "I was the lead developer of a social media platform designed around daring your friends.",
     "link" : "/projects?project=oddsare",
     "urlname" : "oddsare",
+    "external_link" : "",
     "description" : [
       [
         "Odds Are started as a design project for a class at UIUC. Me and three other friends",
@@ -385,7 +387,7 @@
     "name" : "Pipeline",
     "employer" : "",
     "type" : "Personal Project",
-    "date" : "12/14 - 03/15",
+    "date" : "12/14 - 02/15",
     "languages" : [
       "Objective-C"
     ],

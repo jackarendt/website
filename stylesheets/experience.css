@@ -17,6 +17,16 @@ h6 {
   margin-bottom: 0.5em;
 }
 
+a:-webkit-any-link {
+  text-decoration: none;
+  -webkit-appearance: none;
+  color: #2e576d;
+}
+
+a:hover {
+  color: #317d84;
+}
+
 .banner {
   margin: 3em 0 1em 0;
   height: 6em;
@@ -51,9 +61,7 @@ h6 {
   float: left;
 }
 
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px) {
+@media screen and (min-width : 768px) and (max-width : 1024px) {
   .container {
     position: relative;
     width: 92vw;
@@ -76,8 +84,7 @@ and (max-device-width : 1024px) {
   }
 }
 
-@media only screen
-and (max-device-width : 767px) {
+@media screen and (max-width : 767px) {
   .container {
     position: relative;
     width: 92vw;

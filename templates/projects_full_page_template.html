@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Jack Arendt - {{ company }}</title>
+  <title>Jack Arendt - {{ name }}</title>
   <!-- Meta Tags -->
   <link rel="apple-touch-icon" sizes="180x180" href="[[bucket_url]]/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="[[bucket_url]]/favicon/favicon-32x32.png">
@@ -20,10 +20,12 @@
   <div class="logo">
     <a href="/"><img src="[[bucket_url]]/img/logo.svg" alt="Jack Arendt Logo"></a>
   </div>
-  <img class="banner" src="[[bucket_url]]{{bannerurl}}">
-  <h2>{{ company }}<span class="date-span">{{ tenure }}</span></h2>
-  <h4>{{ title }}</h4>
-  <h6>{{ location }}</h6>
+  <img class="banner" src="[[bucket_url]]{{project_url}}">
+  <h2>{% if external_link|length > 0 %}<a href="{{ external_link }}">{{ name }}</a>{% else %}{{ name }}{% endif %}
+    <span class="date-span">{{ date }}</span>
+  </h2>
+  <h4>{{ type }}</h4>
+  <h6>{{ employer }}</h6>
   <div class="container">
     {% for desc in description %}
     <p class="description-text"> {{ desc }}</p>
@@ -33,8 +35,8 @@
     <div class="languages-container">
       <h3 class="languages-title">Languages</h3>
       <ul class="skills-list">
-        {% for skill in skills %}
-        <li class="mono-skills-list">{{ skill }}</li>
+        {% for language in languages %}
+        <li class="mono-skills-list">{{ language }}</li>
         {% endfor %}
       </ul>
     </div>

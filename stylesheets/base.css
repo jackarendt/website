@@ -426,9 +426,7 @@ textarea.contact-form-input {
   height: 5em;
 }
 
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px) {
+@media screen and (min-width : 768px) and (max-width : 1024px) {
   h5 {
     font-size: 1.5em;
   }
@@ -458,8 +456,7 @@ and (max-device-width : 1024px) {
   }
 }
 
-@media only screen
-and (max-device-width : 767px) {
+@media screen and (max-width : 767px) {
   h2 {
     font-size: 1.8em;
   }

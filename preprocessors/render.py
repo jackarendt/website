@@ -110,6 +110,34 @@ def render_experience_page(job):
                          bannerurl=bannerurl,
                          location=location)
 
+def render_projects_page(project):
+  """Renders the template HTML for a given project."""
+  name = project['name']
+  employer = project['employer']
+  type = project['type']
+  date = project['date']
+  languages = project['languages']
+  frameworks = project['frameworks']
+  project_url = project['image_url']
+  external_link = project['external_link']
+
+  # Job description is a 2D array split into paragraphs. Join each line in a paragraph into a single
+  # string.
+  description = []
+  for paragraph in project['description']:
+    description.append(' '.join(paragraph))
+
+  return render_template('projects_full_page_template.html',
+                         name=name,
+                         employer=employer,
+                         type=type,
+                         date=date,
+                         languages=languages,
+                         frameworks=frameworks,
+                         project_url=project_url,
+                         external_link=external_link,
+                         description=description)
+
 
 def add_html_elements_inside_node(html_string, html_element, node_name, elements):
   """

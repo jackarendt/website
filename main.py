@@ -50,7 +50,10 @@ def projects():
       html = storage.replace_bucket_name(html)
     return html
 
-  # TODO: load specific project template.
+  # Load the project page for a specific project.
+  html = render.render_projects_page(project)
+  html = storage.replace_bucket_name(html)
+  return html
 
 @app.errorhandler(500)
 def server_error(e):
