@@ -18,6 +18,7 @@
     "snippet" : "Helped modernize the front end for a new moonshot at Google X.",
     "link" : "/projects?project=googlex",
     "urlname" : "googlex",
+    "external_link" : "https://x.company/",
     "description" : [
       [
         "Helped modernize the frontend for an ML visualization tool. This involved improving load",
@@ -46,6 +47,7 @@
     "snippet" : "Trained a vision and OCR model to recognize the game board.",
     "link" : "/projects?project=pacman",
     "urlname" : "pacman",
+    "external_link" : "https://github.com/jackarendt/pacman-ai",
     "description" : [
       [
         "After taking multiple online courses about machine learning, I set out to create my own",
@@ -103,13 +105,15 @@
       "Mercurial (hg)",
       "Earl Grey",
       "OCMock",
-      "XCTest"
+      "XCTest",
+      "Sketch"
     ],
     "image_url" : "/projects/gboard.png",
     "round_corners" : true,
     "snippet" : "I rewrote the entire expression platform, and increased typing accuracy.",
     "link" : "/projects?project=gboard",
     "urlname" : "gboard",
+    "external_link" : "https://itunes.apple.com/us/app/gboard/id1091700242?mt=8",
     "description" : [
         [
         "Gboard is a third party keyboard for iOS. I joined the team shortly after launch in",
@@ -149,7 +153,9 @@
     ],
     "frameworks" : [
       "iOS",
-      "Git"
+      "Git",
+      "Illustrator",
+      "TestFlight"
     ],
     "image_url" : "/projects/tallied.png",
     "round_corners" : true,
@@ -158,7 +164,14 @@
     "urlname" : "tallied",
     "description" : [
       [
-        "TODO: Add Description"
+        "I was contracted initially to help consult with a business pitch, but ended up building a",
+        "demo app for four undergrad students at Wheaton University. After multiple meetings over",
+        "FaceTime, I opened up Illustrator and went through many design reviews until we settled on",
+        "a simple, yet effective UI. With just three weeks until the demo, I spent many late nights",
+        "building a demo app that used app groups to mock a network connection between two apps.",
+        "The UI was based on Apple's new card design, and was written in Swift. I used TestFlight",
+        "to upload builds to the students, and was always available to talk and meet. The business",
+        "pitch went extremely well, with the four students earning second place."
       ]
     ]
   },
@@ -173,16 +186,40 @@
     ],
     "frameworks" : [
       "iOS",
-      "Git"
+      "Git",
+      "iTunes Connect"
     ],
     "image_url" : "/projects/performsource.png",
     "round_corners" : true,
     "snippet" : "I took an app that wasn't even using ARC and redesigned it inside and out.",
     "link" : "/projects?project=performsource",
     "urlname" : "performsource",
+    "extenral_link" : "https://itunes.apple.com/us/app/visa-performsource-cost-savings-calculator-email-version/id533284288?mt=8",
     "description" : [
       [
-        "TODO: Add Description"
+        "PerformSource is a sales tool application to convince businesses to sign up for a",
+        "purchasing card. The app mocked sales and expenditures data to show how much money could",
+        "be saved by using a p-card over using checks. The app was initially contracted out, and",
+        "was written in 2012. Fast forward to 2016, and the skeumorphic design, and lack of modern",
+        "features left a lot to be desired. My work was split into two phases. Phase one was",
+        "gutting the insides and updating the code base. Phase two was updating the UI to be in",
+        "compliance with Visa's new brand guidelines, and work for larger iPads."
+      ],
+      [
+        "I started phase one by mercilessly hunting down all of the retain and release statements,",
+        "and converting the whole app to use ARC. Also the code health was in poor shape, with many",
+        "misspellings, and needless looping. I spent three weeks converting the codebase to use the",
+        "iOS 9 SDK, and setting up a maintenance plan."
+      ],
+      [
+        "For phase two, I met with a few designers to help explain what the main user journeys were",
+        "and what was most important when demoing this app. I then set out to start updating the UI",
+        "to use Auto-layout and follow the new designs. About half way through, I realized that some",
+        "of the designs weren't the correct screen size, and they had been designed for an arbitrary",
+        "screen size. With no designers available, I fixed a few of the screens myself. After 6",
+        "weeks of development, the new app worked on any iPad in any orientation, something that",
+        "our clients had been asking for. The app was met with very positive marks, and we received",
+        "a lot of great feedback from clients."
       ]
     ]
   },
@@ -200,16 +237,25 @@
     "frameworks" : [
       "Flask",
       "Git",
-      "lxml"
+      "lxml",
+      "Illustrator"
     ],
     "image_url" : "/img/logo.svg",
     "round_corners" : false,
     "snippet" : "My second crack at a personal website. This time it's server side rendered, and no bootstrap.",
     "link" : "/projects?project=website",
     "urlname" : "website",
+    "external_link" : "https://github.com/jackarendt/website",
     "description" : [
       [
-        "TODO: Add Description"
+        "This is my second shot at a website, and this time I decided to make a dynamic website",
+        "instead of a static website like my first version. I also decided to remove bootstrap, and",
+        "actually learn CSS. I chose python/Flask as my language of choice mainly because I already",
+        "knew express and wanted a challenge. I'm using templates to render dynamic content such as",
+        "this page, and parts of my home page. I also use lxml to insert DOM nodes if a node needs",
+        "additional customization. My website is hosted entirely on Google Cloud, with a lot of",
+        "resources being stored on a Google Storage bucket. I designed the whole website, and used",
+        "Pinterest to find inspiration on web design."
       ]
     ]
   },
@@ -232,9 +278,25 @@
     "snippet" : "I was an iOS engineer responsible for building out a customizable mPOS experience.",
     "link" : "/projects?project=mvisa",
     "urlname" : "mvisa",
+    "external_link" : "https://www.visa.com.ng/pay-with-visa/featured-technologies/mvisa.html",
     "description" : [
       [
-        "TODO: Add Description"
+        "mVisa is a Mobile Point of Sale (mPOS) SDK that is used by many banks in India. Credit",
+        "card terminals are expensive, and a lot of merchants don't own them. mVisa is an",
+        "alternative to a credit card terminal, allowing users to pay using their phones. I worked",
+        "on the original prototype which was written entirely in Swift. Since I was building both",
+        "the merchant app and consumer app, I structured the app so that a lot of code was shared",
+        "in a dynamic framework. This demo app was used to pitch to potential banks to integrate",
+        "with mVisa. It used Parse as a backend, and relied heavily on push notifications to",
+        "simulate a persistent connection."
+      ],
+      [
+        "Later, I was brought on as one of two iOS engineers to build the official mVisa SDK. I",
+        "worked mainly on the consumer SDK, and spent a lot of time optimizing performance, and",
+        "working with designers. I also contributed to Visa's shared design components. Just like",
+        "how Apple has UIKit, and Google has Material Design, Visa was building out its own UI",
+        "components that could be shared in all of its apps. I built a lot of the components that",
+        "dealt specifically with rendering cards."
       ]
     ]
   },
@@ -249,16 +311,35 @@
     "frameworks" : [
       "iOS",
       "Git",
-      "SpriteKit"
+      "SpriteKit",
+      "Illustrator"
     ],
     "image_url" : "/projects/sierravalley.svg",
     "round_corners" : true,
     "snippet" : "My first crack at a game, an infinite runner with an objective of climbing a mountain.",
     "link" : "/projects?project=sierravalley",
     "urlname" : "sierravalley",
+    "external_link" : "https://github.com/jackarendt/sierra-valley",
     "description" : [
       [
-        "TODO: Add Description"
+        "My favorite games growing up were arcade games, especially racing games. When my family",
+        "used to go out to eat, my parents would give my brother and I quarters to go play Cruisin'",
+        "USA so they could talk in peace. Later, I would go on to play Midnight Club and Need for",
+        "Speed all through middle and high school. In college, my go-to was Mario Kart (N64 only).",
+        "Needless to say, I love racing games, so this was kind of always a dream for me. I didn't",
+        "know where to start, so I just grabbed my computer and opened Illustrator. After a few",
+        "weeks of messing around and sketching cars in my notebook, I finally started development.",
+        "Inspired by No Man's Sky, I opted to make my game procedurally generated. Each game piece",
+        "was rendered and selected on the fly based on the current difficulty level. This would",
+        "make each time through the game different and new, but also made it a complete pain to",
+        "debug. I used SpriteKit as my game engine, and carefully profiled performance to make sure",
+        "my game ran smoothly. The game is more or less feature complete, but not on the App Store.",
+        "So what happened? Well, two things. One, life happened, I got insanely busy at work and my",
+        "time for personal projects quickly approached zero. Two, I realized that making a game is easy,",
+        "making a game fun is hard. The more I played it, the more I realized that it just didn't",
+        "have that element of fun and addiction that a lot of my childhood favorites had. It was a",
+        "tough realization that left me questioning my own abilities. But I ended up channeling the",
+        "frustration and anger into learning new skills, and finding new passions."
       ]
     ]
   },
@@ -273,7 +354,9 @@
     "frameworks" : [
       "iOS",
       "Git",
-      "Parse"
+      "Parse",
+      "Illustrator",
+      "iTunes Connect"
     ],
     "image_url" : "/projects/oddsare.svg",
     "round_corners" : true,
@@ -282,7 +365,19 @@
     "urlname" : "oddsare",
     "description" : [
       [
-        "TODO: Add Description"
+        "Odds Are started as a design project for a class at UIUC. Me and three other friends",
+        "decided that our idea actually has a shot in the real world. It was an online version of",
+        "Odds Are, which is a game that we all used to play to dare our friends to do things. When",
+        "I was a senior, this was all the rage, and we decided to capitalize on the opportunity."
+      ],
+      [
+        "The app was written entirely in Swift, and uses Parse as a backend. The app also leverages",
+        "Facebook's Graph API and sign in. The app launched in July, 2015. This was my first large",
+        "app, and it was met with immediate success. Without a marketing budget, we had over 1000",
+        "DAUs, and were generating social media buzz in our social media circles. I eventually",
+        "discontinued the app after Parse announced it's shutdown in early 2016. I learned a lot",
+        "from the opportunity, especially how to manage a small team, and how to effectively reach",
+        "your user base."
       ]
     ]
   },
@@ -296,16 +391,24 @@
     ],
     "frameworks" : [
       "iOS",
-      "Git"
+      "Git",
+      "Illustrator",
+      "iTunes Connect"
     ],
     "image_url" : "/projects/pipeline.png",
     "round_corners" : true,
     "snippet" : "A puzzle game modeled after \"Connect the Pipes.\" My first E2E game with no oversight.",
     "link" : "/projects?project=pipeline",
     "urlname" : "pipeline",
+    "external_link" : "https://itunes.apple.com/pg/app/pipeline-a-pipe-based-maze-game/id961382659?mt=8",
     "description" : [
       [
-        "TODO: Add Description"
+        "Pipeline was my second app on the App Store, and the first app that I developed E2E. I",
+        "developed the app over winter break 2014, as a way to make some side income for the spring",
+        "semester. The app was written in Objective-C, and used Core Data as storage. I designed",
+        "the whole thing using Illustrator, and designed all 96 levels. The app wasn't a commercial",
+        "success like I had hoped, but my mom liked the game. I learned a lot in the process, and I",
+        "actually felt like I understood iTunes Connect at this point."
       ]
     ]
   }
