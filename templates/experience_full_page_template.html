@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <title>Jack Arendt - {{ company }}</title>
+  <!-- Meta Tags -->
+  <link rel="apple-touch-icon" sizes="180x180" href="[[bucket_url]]/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="[[bucket_url]]/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="[[bucket_url]]/favicon/favicon-16x16.png">
+  <link rel="manifest" href="[[bucket_url]]/favicon/site.webmanifest">
+  <link rel="mask-icon" href="[[bucket_url]]/favicon/safari-pinned-tab.svg" color="#2e576d">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <!-- Style sheets  -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Raleway:300,400|Roboto+Mono" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/base.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/experience.css">
+  <!-- JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="logo">
+    <a href="/"><img src="[[bucket_url]]/img/logo.svg" alt="Jack Arendt Logo"></a>
+  </div>
+  <img class="banner" src="[[bucket_url]]{{bannerurl}}">
+  <h2>{{ company }}<span class="date-span">{{ tenure }}</span></h2>
+  <h4>{{ title }}</h4>
+  <h6>{{ location }}</h6>
+  <div class="container">
+    {% for desc in description %}
+    <p class="description-text"> {{ desc }}</p>
+    {% endfor %}
+  </div>
+  <div class="skills-list-container">
+    <div class="languages-container">
+      <h3 class="languages-title">Languages</h3>
+      <ul class="skills-list">
+        {% for skill in skills %}
+        <li class="mono-skills-list">{{ skill }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="frameworks-container">
+      <h3 class="languages-title">Frameworks</h3>
+      <ul class="skills-list">
+        {% for framework in frameworks %}
+        <li class="mono-skills-list">{{ framework }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="footer"></div>
+</body>
+</html>

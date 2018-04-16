@@ -1,10 +1,10 @@
-import json
+import data_loader
 from lxml import html, etree
 from flask import render_template, render_template_string
 
-def render_experience_template(template, hyphenate_skills):
+def render_experience_template(template):
   """Loads the jobs.json file and renders a given template. Returns the formatted HTML."""
-  data = json.load(open('data/jobs.json'))
+  data = data_loader.load_experience_file()
   template_html = ""
   for job in data:
     company = job["company"]
@@ -16,14 +16,12 @@ def render_experience_template(template, hyphenate_skills):
     # Skills are hyphenated, and the description is an array of lines that should be joined by a
     # space. This is to make the JSON file more human readable.
     skills_delimited = " - ".join(job["skills"])
-    description = " ".join(job["description"])
     template_html += render_template(template,
                                      company=company,
                                      tenure=tenure,
                                      title=title,
                                      snippet=snippet,
                                      skills_delimited=skills_delimited,
-                                     description=description,
                                      link=link)
   return template_html
 
@@ -41,11 +39,38 @@ def render_skills_template(template):
                                        item_index=index)
     return template_html
 
-  data = json.load(open('data/skills.json'))
+  data = data_loader.load_skills_file()
   template_html = _render_skill_template(data["languages"])
   template_html += render_template(template, skill="", percent=0, item_index="")
   template_html += _render_skill_template(data["frameworks"])
   return template_html
+
+def render_experience_page(job):
+  """Renders the experience page for a given job. Returns the templated HTML."""
+  company = job["company"]
+  tenure = job["tenure"]
+  title = job["title"]
+  link = job["link"]
+  skills = job["skills"]
+  bannerurl = job["bannerurl"]
+  location = job["location"]
+  frameworks = job["frameworks"]
+
+  # Job description is a 2D array split into paragraphs. Join each line in a paragraph into a single
+  # string.
+  description = []
+  for paragraph in job["description"]:
+    description.append(' '.join(paragraph))
+
+  return render_template('experience_full_page_template.html',
+                         company=company,
+                         tenure=tenure,
+                         title=title,
+                         skills=skills,
+                         frameworks=frameworks,
+                         description=description,
+                         bannerurl=bannerurl,
+                         location=location)
 
 
 def add_html_elements_inside_node(html_string, html_element, node_name, elements):

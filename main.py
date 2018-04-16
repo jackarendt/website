@@ -1,7 +1,7 @@
 import logging
 import os
-from flask import Flask, request
-from preprocessors import storage, render
+from flask import Flask, request, redirect
+from preprocessors import *
 
 app = Flask(__name__)
 
@@ -13,7 +13,7 @@ def root():
     html = storage.replace_bucket_name(html)
 
     # Render experience template.
-    expierience = render.render_experience_template('experience_template.html', True)
+    expierience = render.render_experience_template('experience_template.html')
     html = render.add_html_elements_inside_node(html, 'ul', 'experiences', expierience)
 
     # Render skills template.
@@ -22,6 +22,19 @@ def root():
 
     # Return formatted HTML.
     return html
+
+@app.route('/experience')
+def experience():
+  """Loads the job experience template. Redirects to experiences div if no valid job is found."""
+  job = data_loader.target_experience(request.args.get('job'))
+  if job is None:
+    # Redirect to the home page focused at the experience div.
+    return redirect('/#experience', 302)
+
+  # Render the template and replace all instances of the bucket name.
+  html = render.render_experience_page(job)
+  html = storage.replace_bucket_name(html)
+  return html
 
 @app.errorhandler(500)
 def server_error(e):

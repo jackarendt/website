@@ -1,0 +1,91 @@
+h2 {
+  font-size: 3em;
+}
+
+h4 {
+  margin: 0.25em 0 0.25em 0;
+  font-size: 2em;
+}
+
+h6 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 2em;
+  color: black;
+  margin: 0;
+  padding-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.banner {
+  margin: 3em 0 1em 0;
+  height: 6em;
+  max-height: 300px;
+  width: auto;
+  display: block;
+}
+
+.description-text {
+  margin-bottom: 0.75em;
+}
+
+.skills-list-container {
+  padding-left: 2em;
+  position: relative;
+  float: left;
+}
+
+.skills-list {
+  -webkit-padding-start: 0px;
+  list-style-type: none;
+}
+
+.mono-skills-list:before {
+  content: "- ";
+}
+
+.container {
+  position: relative;
+  width: 60%;
+  max-width: 60em;
+  float: left;
+}
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+  .container {
+    position: relative;
+    width: 92vw;
+    float: none;
+  }
+
+  .skills-list-container {
+    float: none;
+    padding-left: 0;
+  }
+
+  .languages-container {
+    float: left;
+    width: 50%;
+  }
+
+  .frameworks-container {
+    float: left;
+    width: 50%;
+  }
+}
+
+@media only screen
+and (max-device-width : 767px) {
+  .container {
+    position: relative;
+    width: 92vw;
+    float: none;
+  }
+
+  .skills-list-container {
+    float: none;
+    padding-left: 0;
+  }
+}

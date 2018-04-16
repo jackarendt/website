@@ -15,4 +15,11 @@ $(document).ready(function() {
   $('#contact-form').submit(function() {
     return false;
   });
+
+  const hash = window.location.hash;
+  if (hash != null) {
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 500);
+  }
 });
