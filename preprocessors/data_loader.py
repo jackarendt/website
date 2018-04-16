@@ -14,7 +14,7 @@ def load_projects_file():
 
 def target_experience(job_url_parameter):
   """Returns the job that matches the supplied URL parameter."""
-  if job is None:
+  if job_url_parameter is None:
     return None
 
   jobs = load_experience_file()
