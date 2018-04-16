@@ -10,7 +10,6 @@ def root():
   """Entry point to website. Return home.html and populate it with latest data."""
   with open('html/home.html') as f:
     html = f.read()
-    html = storage.replace_bucket_name(html)
 
     # Render experience template.
     expierience = render.render_experience_template('experience_template.html')
@@ -20,8 +19,11 @@ def root():
     skills = render.render_skills_template('skills_list_item.html')
     html = render.add_html_elements_inside_node(html, 'dl', 'skills', skills)
 
+    projects = render.render_projects_grid_template('projects_template.html', 5, True)
+    html = render.add_html_elements_inside_node(html, 'div', 'projects-container', projects)
+
     # Return formatted HTML.
-    return html
+    return storage.replace_bucket_name(html)
 
 @app.route('/experience')
 def experience():

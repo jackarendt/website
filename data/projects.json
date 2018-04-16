@@ -11,14 +11,18 @@
       "CSS"
     ],
     "frameworks" : [
-      "Blaze",
+      "Blaze"
     ],
     "image_url" : "/projects/googlex.png",
     "round_corners" : false,
     "snippet" : "Helped modernize the front end for a new moonshot at Google X.",
+    "link" : "/projects?project=googlex",
+    "urlname" : "googlex",
     "description" : [
-      "Helped modernize the frontend for an ML visualization tool. This involved improving load",
-			"time, browser compatibility, and adding much needed features to visualize models."
+      [
+        "Helped modernize the frontend for an ML visualization tool. This involved improving load",
+  			"time, browser compatibility, and adding much needed features to visualize models."
+      ]
     ]
   },
   {
@@ -40,36 +44,44 @@
     "image_url" : "/projects/pacman.png",
     "round_corners" : false,
     "snippet" : "Trained a vision and OCR model to recognize the game board.",
+    "link" : "/projects?project=pacman",
+    "urlname" : "pacman",
     "description" : [
-      "After taking multiple online courses about machine learning, I set out to create my own",
-			"ML project. This project started because of a disagreement I had with my girlfriend about",
-      "what was the optimal strategy when playing Pacman.",
-      "\n"
-      "My initial approach was to split the game board up into 28x36 tiles consisting of 8x8 tiles.",
-      "Frankly, I chose this approach because I didn't know any better. I had read about the window",
-      "sliding method in an article and thought the approach would work better. I wrote a macOS app",
-      "to launch Pacman on an emulator (OpenEmu), and take a screenshot of the game window 11 times",
-      "per second. After processing the image and resizing it, I run a tiling algorithm to split",
-      "the 224x288 image into 1008 8x8 images. From there, the 1008 images would be classified into",
-      "14 different classes. The inference was all done in C++ using TensorFlow. From there, I",
-      "would pass my 1008 classified tiles to my RL agent. Currently, I have an overall F1 score of",
-      "0.96, and I'm currently in the process of designing the RL agent, but I'm leaning towards an",
-      "RNN, and using policy gradients to train.",
-      "\n",
-      "One benefit of using window sliding was that I was easily able to create an OCR model. The",
-      "OCR model required half as many images to train as the tile classifier model, and has an",
-      "overall F1 score of 0.99.",
-      "\n",
-      "Overall, I would have used a ConvNet from the getgo and not bother with the OCR or tile",
-      "classifier model, but I'm grateful that I learned so much in the process. I also learned an",
-      "extremely painful lesson during training: Have consistent labels. As I started classifying,",
-      "my internal rules for what was a wall, what was a ghost, and what was just a mainly blank",
-      "tile changed frequently. With the OCR model I ran into problems when classfiying 0's or O's.",
-      "Reclassfiying the tiles by hand took a lot of time, and was a constant source of",
-      "frustration.",
-      "\n",
-      "I look forward to finishing my agent, and using the new strategies to beat my friends at",
-      "Pacman."
+      [
+        "After taking multiple online courses about machine learning, I set out to create my own",
+  			"ML project. This project started because of a disagreement I had with my girlfriend about",
+        "what was the optimal strategy when playing Pacman."
+      ],
+      [
+        "My initial approach was to split the game board up into 28x36 tiles consisting of 8x8 tiles.",
+        "Frankly, I chose this approach because I didn't know any better. I had read about the window",
+        "sliding method in an article and thought the approach would work better. I wrote a macOS app",
+        "to launch Pacman on an emulator (OpenEmu), and take a screenshot of the game window 11 times",
+        "per second. After processing the image and resizing it, I run a tiling algorithm to split",
+        "the 224x288 image into 1008 8x8 images. From there, the 1008 images would be classified into",
+        "14 different classes. The inference was all done in C++ using TensorFlow. From there, I",
+        "would pass my 1008 classified tiles to my RL agent. Currently, I have an overall F1 score of",
+        "0.96, and I'm currently in the process of designing the RL agent, but I'm leaning towards an",
+        "RNN, and using policy gradients to train."
+      ],
+      [
+        "One benefit of using window sliding was that I was easily able to create an OCR model. The",
+        "OCR model required half as many images to train as the tile classifier model, and has an",
+        "overall F1 score of 0.99."
+      ],
+      [
+        "Overall, I would have used a ConvNet from the getgo and not bother with the OCR or tile",
+        "classifier model, but I'm grateful that I learned so much in the process. I also learned an",
+        "extremely painful lesson during training: Have consistent labels. As I started classifying,",
+        "my internal rules for what was a wall, what was a ghost, and what was just a mainly blank",
+        "tile changed frequently. With the OCR model I ran into problems when classfiying 0's or O's.",
+        "Reclassfiying the tiles by hand took a lot of time, and was a constant source of",
+        "frustration."
+      ],
+      [
+        "I look forward to finishing my agent, and using the new strategies to beat my friends at",
+        "Pacman."
+      ]
     ]
   },
   {
@@ -96,29 +108,82 @@
     "image_url" : "/projects/gboard.png",
     "round_corners" : true,
     "snippet" : "I rewrote the entire expression platform, and increased typing accuracy.",
+    "link" : "/projects?project=gboard",
+    "urlname" : "gboard",
     "description" : [
-      "Gboard is a third party keyboard for iOS. I joined the team shortly after launch in",
-      "September 2016. My main responsibility for Gboard was overseeing the development of the",
-      "expressions portion of the keyboard (emojis, GIFs, etc.). During my time, I led a large",
-      "rewrite of this part of keyboard to use modular components and views that resembled the",
-      "architecture of the iOS Springboard. Using this architecture, I was able to independently",
-      "develop, QA, and test without worrying about one component interfering with another. The old",
-      "architecture was a single view controller, and shared a ton of state, even when it wasn't",
-      "necessary. The new architecture has virtually no shared state, and has made development a",
-      "breeze. Since launching the rewrite, two new expression components have been developed",
-      "and our launch velocity is now much higher than it was before the rewrite.",
-      "\n",
-      "During my time at Gboard, I also worked on improving the core typing experience. I started",
-      "working on this in January 2018. I would mercilessly hunt down performance bottlenecks to",
-      "improve our keyboard launch time and stability, as well as focus on reducing the view",
-      "hierarchy, which in turn used less memory. I've recently been focusing on tuning our decoder",
-      "to improve our autocorrection ratio, and reduce our backspace ratio.",
-      "\n",
-      "My largest community contribution was building a platform for monitoring our usage and",
-      "statistics. My platform executes a series of scripts each morning which aggregate anonymous",
-      "user data into a digestable format. These metrics are then shown in a series of dashboards.",
-      "After developing the platform, I educated team members on how to create their own",
-      "dashboards, but also helped my coworkers identify actionable metrics."
+        [
+        "Gboard is a third party keyboard for iOS. I joined the team shortly after launch in",
+        "September 2016. My main responsibility for Gboard was overseeing the development of the",
+        "expressions portion of the keyboard (emojis, GIFs, etc.). During my time, I led a large",
+        "rewrite of this part of keyboard to use modular components and views that resembled the",
+        "architecture of the iOS Springboard. Using this architecture, I was able to independently",
+        "develop, QA, and test without worrying about one component interfering with another. The old",
+        "architecture was a single view controller, and shared a ton of state, even when it wasn't",
+        "necessary. The new architecture has virtually no shared state, and has made development a",
+        "breeze. Since launching the rewrite, two new expression components have been developed",
+        "and our launch velocity is now much higher than it was before the rewrite."
+      ],
+      [
+        "During my time at Gboard, I also worked on improving the core typing experience. I started",
+        "working on this in January 2018. I would mercilessly hunt down performance bottlenecks to",
+        "improve our keyboard launch time and stability, as well as focus on reducing the view",
+        "hierarchy, which in turn used less memory. I've recently been focusing on tuning our decoder",
+        "to improve our autocorrection ratio, and reduce our backspace ratio."
+      ],
+      [
+        "My largest community contribution was building a platform for monitoring our usage and",
+        "statistics. My platform executes a series of scripts each morning which aggregate anonymous",
+        "user data into a digestable format. These metrics are then shown in a series of dashboards.",
+        "After developing the platform, I educated team members on how to create their own",
+        "dashboards, but also helped my coworkers identify actionable metrics."
+      ]
     ]
   },
+  {
+    "name" : "Tallied",
+    "employer" : "",
+    "type" : "Consulting / Freelancing",
+    "date" : "01/18 - 03/18",
+    "languages" : [
+      "Swift"
+    ],
+    "frameworks" : [
+      "iOS",
+      "Git"
+    ],
+    "image_url" : "/projects/tallied.png",
+    "round_corners" : true,
+    "snippet" : "I had 6 weeks to design, develop, and test a demo app for a business presentation.",
+    "link" : "/projects?project=tallied",
+    "urlname" : "tallied",
+    "description" : [
+      [
+        "TODO: Add Description"
+      ]
+    ]
+  },
+  {
+    "name" : "PerformSource",
+    "employer" : "Visa Inc.",
+    "type" : "Full Time Job",
+    "date" : "01/16 - 06/16",
+    "languages" : [
+      "Objective-C",
+      "SQL"
+    ],
+    "frameworks" : [
+      "iOS",
+      "Git"
+    ],
+    "image_url" : "/projects/performsource.png",
+    "round_corners" : true,
+    "snippet" : "I took an app that wasn't even using ARC and redesigned it inside and out.",
+    "link" : "/projects?project=performsource",
+    "urlname" : "performsource",
+    "description" : [
+      [
+        "TODO: Add Description"
+      ]
+    ]
+  }
 ]
