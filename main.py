@@ -68,15 +68,17 @@ def contact():
 def server_error(e):
   """Log the exception, and send back a custom error page."""
   logging.exception('An error occurred during a request.')
-  with open('html/500.html') as f:
-    html = f.read()
-    html = storage.replace_bucket_name(html)
-    return html
+  html = render.render_template('error_message_template.html',
+                                title="Hmm, something went wrong.",
+                                subtitle="An internal error occurred, that's all I know.")
+  html = storage.replace_bucket_name(html)
+  return html
 
 @app.errorhandler(404)
 def unknown_page(e):
   """Send the user to a specific 404 page."""
-  with open('html/404.html') as f:
-    html = f.read()
-    html = storage.replace_bucket_name(html)
-    return html
+  html = render.render_template('error_message_template.html',
+                                title="That's a 404.",
+                                subtitle="Looks like you made a wrong turn.")
+  html = storage.replace_bucket_name(html)
+  return html

@@ -138,6 +138,8 @@ def render_projects_page(project):
                          external_link=external_link,
                          description=description)
 
+def render_error_page(template, title, subtitle):
+  return render_template(template, title=title, subtitle=subtitle)
 
 def add_html_elements_inside_node(html_string, html_element, node_name, elements):
   """
