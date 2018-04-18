@@ -1,18 +1,22 @@
 // Add on click handlers for buttons.
 $(document).ready(function() {
-  $('#linkedin').attr('href', 'https://www.linkedin.com/in/johnrarendt/');
-  $('#linkedin').attr('target', '_blank');
 
-  $('#email').attr('href', 'mailto:jack.arendt93@gmail.com');
-  $('#email').attr('target', '_blank');
+  var encodeQueryData = function(data) {
+    let ret = [];
+    for (let d in data) {
+      ret.push(encodeURIComponent(d) + '=' + encodeURIComponent(data[d]));
+    }
+    return ret.join('&');
+  };
 
-  $('#github').attr('href', 'https://www.github.com/jackarendt/website');
-  $('#github').attr('target', '_blank');
+  $('#contact-form').submit(function(event) {
+    event.preventDefault();
+    console.log($(this).serialize());
 
-  $('#instagram').attr('href', 'https://www.instagram.com/jack.arendt/');
-  $('#instagram').attr('target', '_blank');
-
-  $('#contact-form').submit(function() {
+    const url = '/contact?' + $(this).serialize();
+    $.post(url, {}, function(data){
+      console.log(data);
+    });
     return false;
   });
 

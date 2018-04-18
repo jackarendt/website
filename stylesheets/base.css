@@ -376,6 +376,7 @@ textarea.contact-form-input {
   margin: auto;
   border: none;
   -webkit-appearance: none;
+  cursor: pointer;
 }
 
 .contact-form-submit:hover {

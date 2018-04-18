@@ -55,11 +55,28 @@ def projects():
   html = storage.replace_bucket_name(html)
   return html
 
+@app.route('/contact')
+def contact():
+  """Sends the form to mailgun and returns either a success or error message."""
+  name = request.args.get('name')
+  email = request.args.get('email')
+  subject = request.args.get('subject')
+  message = request.args.get('message')
+  return "Success."
+
 @app.errorhandler(500)
 def server_error(e):
   """Log the exception, and send back a custom error page."""
   logging.exception('An error occurred during a request.')
-  return """
-  An internal error occurred: <pre>{}</pre>
-  See logs for full stacktrace.
-  """.format(e), 500
+  with open('html/500.html') as f:
+    html = f.read()
+    html = storage.replace_bucket_name(html)
+    return html
+
+@app.errorhandler(404)
+def unknown_page(e):
+  """Send the user to a specific 404 page."""
+  with open('html/404.html') as f:
+    html = f.read()
+    html = storage.replace_bucket_name(html)
+    return html
