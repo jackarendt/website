@@ -14,6 +14,8 @@ resources:
 libraries:
   - name: lxml
     version: 3.7.3
+  - name: ssl
+    version: latest
 
 handlers:
 # Able to read html file to update values.

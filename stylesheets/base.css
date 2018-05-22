@@ -273,6 +273,8 @@ dl.skills {
 .projects {
   width: 25vw;
   height: 25vw;
+  max-width: 20em;
+  max-height: 20em;
   float: left;
   text-align: left;
   border: none;
@@ -351,7 +353,6 @@ dl.skills {
   border-color: #2e576d;
 }
 
-
 textarea.contact-form-input {
   resize: none;
   font-family: 'Open Sans', sans-serif;
@@ -406,6 +407,22 @@ textarea.contact-form-input {
   -webkit-padding-start: 0;
 }
 
+.form-response {
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  width: 100%;
+  font-size: 1.25em;
+}
+
+.form-success {
+  color: #2d7a6b;
+}
+
+.form-error {
+  color: #8f2b31;
+}
+
 #instagram {
   background: url('https://storage.googleapis.com/jackarendt-website/img/instagram-icon.svg');
 }
@@ -435,6 +452,8 @@ textarea.contact-form-input {
   .projects {
     width: 31vw;
     height: 31vw;
+    max-width: 31vw;
+    max-height: 31vw;
   }
 
   .projects-content {
@@ -501,6 +520,8 @@ textarea.contact-form-input {
     float: none;
     width: 92vw;
     height: 92vw;
+    max-width: 92vw;
+    max-height: 92vw;
   }
 
   .projects-content {

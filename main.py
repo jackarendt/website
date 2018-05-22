@@ -1,7 +1,12 @@
+import json
 import logging
 import os
+import re
+import httplib2
 from flask import Flask, request, redirect
+from mailgun import *
 from preprocessors import *
+from urllib import urlencode
 
 app = Flask(__name__)
 
@@ -62,15 +67,44 @@ def contact():
   email = request.args.get('email')
   subject = request.args.get('subject')
   message = request.args.get('message')
-  return "Success."
+
+  if not name or not subject or not message or not email:
+    retval = {'success' : False, 'message' : 'Please fill out all fields.'}
+    return json.dumps(retval)
+
+  if not re.match('(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)', email):
+    retval = {'success' : False, 'message' : 'Please provide a valid email address.'}
+    return json.dumps(retval)
+
+  http = httplib2.Http()
+  http.add_credentials('api', '{}'.format(MAILGUN_API_KEY))
+
+  url = 'https://api.mailgun.net/v3/{}/messages'.format(MAILGUN_DOMAIN_NAME)
+  data = {
+    'from': '{} <mailgun@{}>'.format(name, MAILGUN_DOMAIN_NAME),
+    "to": "jack@jackarendt.com",
+    "subject": "{}".format(subject),
+    "text": "Return Email: {}\n\n{}".format(email, message)
+  }
+
+  resp, content = http.request(url, 'POST', urlencode(data),
+                               headers={'Content-Type': 'application/x-www-form-urlencoded'})
+
+  if resp.status != 200:
+    print content
+    retval = {'success' : False, 'message' : 'Something went wrong. Try again later.'}
+    return json.dumps(retval)
+
+  retval = {'success' : True, 'message' : 'Thank you, I\'ll be in touch shortly.'}
+  return json.dumps(retval)
 
 @app.errorhandler(500)
 def server_error(e):
   """Log the exception, and send back a custom error page."""
   logging.exception('An error occurred during a request.')
   html = render.render_template('error_message_template.html',
-                                title="Hmm, something went wrong.",
-                                subtitle="An internal error occurred, that's all I know.")
+                                title='Hmm, something went wrong.',
+                                subtitle='An internal error occurred, that\'s all I know.')
   html = storage.replace_bucket_name(html)
   return html
 
@@ -78,7 +112,7 @@ def server_error(e):
 def unknown_page(e):
   """Send the user to a specific 404 page."""
   html = render.render_template('error_message_template.html',
-                                title="That's a 404.",
-                                subtitle="Looks like you made a wrong turn.")
+                                title='That\'s a 404.',
+                                subtitle='Looks like you made a wrong turn.')
   html = storage.replace_bucket_name(html)
   return html
