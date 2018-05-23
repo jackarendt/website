@@ -11,7 +11,10 @@
       "CSS"
     ],
     "frameworks" : [
-      "Blaze"
+      "Blaze",
+      "Flume",
+      "Protobuffers",
+      "S2 - Google Maps"
     ],
     "image_url" : "/projects/googlex.png",
     "round_corners" : false,
@@ -68,7 +71,7 @@
         "tiling algorithm to split the 224x288 image into 1008 8x8 images. From there, the 1008",
         "images would be classified into 14 different classes. The inference was all done in C++",
         "using TensorFlow. From there, I would pass my 1008 classified tiles to my RL agent.",
-        "Currently, I have an overall F1 score of 0.96, and I'm currently in the process of"
+        "Currently, I have an overall F1 score of 0.96, and I'm currently in the process of",
         "designing the RL agent. However I'm leaning towards a DQN using experience replay."
       ],
       [
@@ -336,7 +339,7 @@
         "was rendered and selected on the fly based on the current difficulty level. This would",
         "make each time through the game different and new, but also made it a complete pain to",
         "debug. I used SpriteKit as my game engine, and carefully profiled performance to make sure",
-        "my game ran smoothly. The game is more or less feature complete, but not on the App Store.",
+        "my game ran smoothly. The game is more or less feature complete, but not on the App Store."
       ]
     ]
   },
