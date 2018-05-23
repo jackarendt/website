@@ -74,8 +74,6 @@ def render_projects_grid_template(template, max_grid_items=sys.maxint, show_more
                                      title=title,
                                      snippet=snippet)
 
-    print template_html
-
   if show_more_button:
     with open('html/more_button.html') as f:
       template_html += f.read()

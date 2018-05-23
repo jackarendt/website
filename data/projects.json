@@ -50,21 +50,26 @@
     "external_link" : "https://github.com/jackarendt/pacman-ai",
     "description" : [
       [
-        "After taking multiple online courses about machine learning, I set out to create my own",
-  			"ML project. This project started because of a disagreement I had with my girlfriend about",
+        "After taking multiple online courses on machine learning, I set out to create my own ML",
+  			"project. This project started because of a disagreement I had with my girlfriend about",
         "what was the optimal strategy when playing Pacman."
       ],
       [
-        "My initial approach was to split the game board up into 28x36 tiles consisting of 8x8 tiles.",
-        "Frankly, I chose this approach because I didn't know any better. I had read about the window",
-        "sliding method in an article and thought the approach would work better. I wrote a macOS app",
-        "to launch Pacman on an emulator (OpenEmu), and take a screenshot of the game window 11 times",
-        "per second. After processing the image and resizing it, I run a tiling algorithm to split",
-        "the 224x288 image into 1008 8x8 images. From there, the 1008 images would be classified into",
-        "14 different classes. The inference was all done in C++ using TensorFlow. From there, I",
-        "would pass my 1008 classified tiles to my RL agent. Currently, I have an overall F1 score of",
-        "0.96, and I'm currently in the process of designing the RL agent, but I'm leaning towards an",
-        "RNN, and using policy gradients to train."
+        "My main goal was to be able to train and run Pacman on my 12\" MacBook. The computer didn't",
+        "have fans, nor a dedicated GPU, so training a model quickly and having efficient inference",
+        "was paramount. My initial approach was to split the game board up into 28x36 tiles",
+        "consisting of 8x8 tiles. I chose this method to reduce the number of features that would in",
+        "feed in to my model. By determining each tile individually, I was able to reduce the number",
+        "of inputs from 193,000 (224 * 288 * 3) to 1008."
+      ],
+      [
+        "I wrote a macOS app to launch Pacman on an emulator (OpenEmu), and take a screenshot of the",
+        "game window 11 times, per second. After processing the image and resizing it, I run a",
+        "tiling algorithm to split the 224x288 image into 1008 8x8 images. From there, the 1008",
+        "images would be classified into 14 different classes. The inference was all done in C++",
+        "using TensorFlow. From there, I would pass my 1008 classified tiles to my RL agent.",
+        "Currently, I have an overall F1 score of 0.96, and I'm currently in the process of"
+        "designing the RL agent. However I'm leaning towards a DQN using experience replay."
       ],
       [
         "One benefit of using window sliding was that I was easily able to create an OCR model. The",
@@ -72,17 +77,14 @@
         "overall F1 score of 0.99."
       ],
       [
-        "Overall, I would have used a ConvNet from the getgo and not bother with the OCR or tile",
-        "classifier model, but I'm grateful that I learned so much in the process. I also learned an",
-        "extremely painful lesson during training: Have consistent labels. As I started classifying,",
-        "my internal rules for what was a wall, what was a ghost, and what was just a mainly blank",
-        "tile changed frequently. With the OCR model I ran into problems when classfiying 0's or O's.",
-        "Reclassfiying the tiles by hand took a lot of time, and was a constant source of",
-        "frustration."
-      ],
-      [
-        "I look forward to finishing my agent, and using the new strategies to beat my friends at",
-        "Pacman."
+        "In retrospect, I would have used a ConvNet to reduce my feature space instead of tiling,",
+        "but doing so taught me a lot about vision and building efficient infrastructure around my",
+        "ML code. I also learned an extremely painful lesson during training: Have consistent",
+        "labels. As I started classifying, my internal rules for what was a wall, what was a ghost,",
+        "and what was just a mainly blank tile changed frequently. With the OCR model I ran into",
+        "problems when classfiying 0's or O's. Reclassfiying the tiles by hand took a lot of time,",
+        "and was a constant source of frustration. I look forward to finishing my agent, and using",
+        "the new strategies to beat my friends at Pacman."
       ]
     ]
   },
@@ -117,14 +119,14 @@
     "description" : [
         [
         "Gboard is a third party keyboard for iOS. I joined the team shortly after launch in",
-        "September 2016. My main responsibility for Gboard was overseeing the development of the",
+        "September 2016. My main responsibility for Gboard is overseeing the development of the",
         "expressions portion of the keyboard (emojis, GIFs, etc.). During my time, I led a large",
         "rewrite of this part of keyboard to use modular components and views that resembled the",
         "architecture of the iOS Springboard. Using this architecture, I was able to independently",
         "develop, QA, and test without worrying about one component interfering with another. The old",
         "architecture was a single view controller, and shared a ton of state, even when it wasn't",
         "necessary. The new architecture has virtually no shared state, and has made development a",
-        "breeze. Since launching the rewrite, two new expression components have been developed",
+        "breeze. Since launching the rewrite, two new expression components have been developed,",
         "and our launch velocity is now much higher than it was before the rewrite."
       ],
       [
@@ -139,7 +141,7 @@
         "statistics. My platform executes a series of scripts each morning which aggregate anonymous",
         "user data into a digestable format. These metrics are then shown in a series of dashboards.",
         "After developing the platform, I educated team members on how to create their own",
-        "dashboards, but also helped my coworkers identify actionable metrics."
+        "dashboards to help my coworkers identify actionable metrics."
       ]
     ]
   },
@@ -166,13 +168,13 @@
     "description" : [
       [
         "I was contracted initially to help consult with a business pitch, but ended up building a",
-        "demo app for four undergrad students at Wheaton University. After multiple meetings over",
-        "FaceTime, I opened up Illustrator and went through many design reviews until we settled on",
+        "demo app for four undergrad students at Wheaton College. After multiple meetings over",
+        "FaceTime, I opened up Illustrator and went through many design reviews until settling on",
         "a simple, yet effective UI. With just three weeks until the demo, I spent many late nights",
         "building a demo app that used app groups to mock a network connection between two apps.",
         "The UI was based on Apple's new card design, and was written in Swift. I used TestFlight",
         "to upload builds to the students, and was always available to talk and meet. The business",
-        "pitch went extremely well, with the four students earning second place."
+        "pitch went extremely well with the four students earning second place."
       ]
     ]
   },
@@ -200,17 +202,17 @@
       [
         "PerformSource is a sales tool application to convince businesses to sign up for a",
         "purchasing card. The app mocked sales and expenditures data to show how much money could",
-        "be saved by using a p-card over using checks. The app was initially contracted out, and",
-        "was written in 2012. Fast forward to 2016, and the skeumorphic design, and lack of modern",
+        "be saved by using a p-card over using checks. The app was initially contracted out and",
+        "written in 2012. Fast forward to 2016, where the skeumorphic design and lack of modern",
         "features left a lot to be desired. My work was split into two phases. Phase one was",
         "gutting the insides and updating the code base. Phase two was updating the UI to be in",
-        "compliance with Visa's new brand guidelines, and work for larger iPads."
+        "compliance with Visa's new brand guidelines, and work with larger iPads."
       ],
       [
         "I started phase one by mercilessly hunting down all of the retain and release statements,",
         "and converting the whole app to use ARC. Also the code health was in poor shape, with many",
         "misspellings, and needless looping. I spent three weeks converting the codebase to use the",
-        "iOS 9 SDK, and setting up a maintenance plan."
+        "iOS 9 SDK and setting up a maintenance plan."
       ],
       [
         "For phase two, I met with a few designers to help explain what the main user journeys were",
@@ -252,11 +254,11 @@
         "This is my second shot at a website, and this time I decided to make a dynamic website",
         "instead of a static website like my first version. I also decided to remove bootstrap, and",
         "actually learn CSS. I chose python/Flask as my language of choice mainly because I already",
-        "knew express and wanted a challenge. I'm using templates to render dynamic content such as",
-        "this page, and parts of my home page. I also use lxml to insert DOM nodes if a node needs",
+        "knew Express.js and wanted a challenge. I'm using templates to render dynamic content such",
+        "as this page and parts of my home page. I also use lxml to insert DOM nodes if a node needs",
         "additional customization. My website is hosted entirely on Google Cloud, with a lot of",
-        "resources being stored on a Google Storage bucket. I designed the whole website, and used",
-        "Pinterest to find inspiration on web design."
+        "resources being stored on a Google Storage bucket. I designed the website using Pinterest",
+        "to find inspiration on web design."
       ]
     ]
   },
@@ -293,11 +295,11 @@
       ],
       [
         "Later, I was brought on as one of two iOS engineers to build the official mVisa SDK. I",
-        "worked mainly on the consumer SDK, and spent a lot of time optimizing performance, and",
-        "working with designers. I also contributed to Visa's shared design components. Just like",
-        "how Apple has UIKit, and Google has Material Design, Visa was building out its own UI",
-        "components that could be shared in all of its apps. I built a lot of the components that",
-        "dealt specifically with rendering cards."
+        "worked mainly on the consumer SDK spending a lot of time optimizing performance, and",
+        "working with designers. I also contributed to Visa's shared design components. Similar to",
+        "Apple's UIKit, and Google's Material Design, Visa began out its own UI components that ",
+        "could be shared in all of its apps. I built a lot of the components that dealt specifically",
+        "with rendering debit and credit cards."
       ]
     ]
   },
@@ -324,7 +326,7 @@
     "description" : [
       [
         "My favorite games growing up were arcade games, especially racing games. When my family",
-        "used to go out to eat, my parents would give my brother and I quarters to go play Cruisin'",
+        "used to go out to eat, my parents would give my brother and me quarters to go play Cruisin'",
         "USA so they could talk in peace. Later, I would go on to play Midnight Club and Need for",
         "Speed all through middle and high school. In college, my go-to was Mario Kart (N64 only).",
         "Needless to say, I love racing games, so this was kind of always a dream for me. I didn't",
@@ -335,12 +337,6 @@
         "make each time through the game different and new, but also made it a complete pain to",
         "debug. I used SpriteKit as my game engine, and carefully profiled performance to make sure",
         "my game ran smoothly. The game is more or less feature complete, but not on the App Store.",
-        "So what happened? Well, two things. One, life happened, I got insanely busy at work and my",
-        "time for personal projects quickly approached zero. Two, I realized that making a game is easy,",
-        "making a game fun is hard. The more I played it, the more I realized that it just didn't",
-        "have that element of fun and addiction that a lot of my childhood favorites had. It was a",
-        "tough realization that left me questioning my own abilities. But I ended up channeling the",
-        "frustration and anger into learning new skills, and finding new passions."
       ]
     ]
   },
@@ -367,17 +363,17 @@
     "external_link" : "",
     "description" : [
       [
-        "Odds Are started as a design project for a class at UIUC. Me and three other friends",
-        "decided that our idea actually has a shot in the real world. It was an online version of",
-        "Odds Are, which is a game that we all used to play to dare our friends to do things. When",
-        "I was a senior, this was all the rage, and we decided to capitalize on the opportunity."
+        "Odds Are started as a design project for a class at UIUC. A few friends and I decided that",
+        "our idea actually had a shot in the real world. It was an online version of Odds Are, which",
+        "is a game that we all used to play to dare our friends to do things. When I was a senior,",
+        "this was all the rage, and we decided to capitalize on the opportunity."
       ],
       [
         "The app was written entirely in Swift, and uses Parse as a backend. The app also leverages",
         "Facebook's Graph API and sign in. The app launched in July, 2015. This was my first large",
-        "app, and it was met with immediate success. Without a marketing budget, we had over 1000",
+        "app, and it was met with immediate success. Without a marketing budget, we had over 1,000",
         "DAUs, and were generating social media buzz in our social media circles. I eventually",
-        "discontinued the app after Parse announced it's shutdown in early 2016. I learned a lot",
+        "discontinued the app after Parse announced its shutdown in early 2016. I learned a lot",
         "from the opportunity, especially how to manage a small team, and how to effectively reach",
         "your user base."
       ]

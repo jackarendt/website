@@ -68,10 +68,12 @@ def contact():
   subject = request.args.get('subject')
   message = request.args.get('message')
 
+  # Verify all fields are filled out.
   if not name or not subject or not message or not email:
     retval = {'success' : False, 'message' : 'Please fill out all fields.'}
     return json.dumps(retval)
 
+  # Verify the email address is valid.
   if not re.match('(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)', email):
     retval = {'success' : False, 'message' : 'Please provide a valid email address.'}
     return json.dumps(retval)
@@ -82,19 +84,21 @@ def contact():
   url = 'https://api.mailgun.net/v3/{}/messages'.format(MAILGUN_DOMAIN_NAME)
   data = {
     'from': '{} <mailgun@{}>'.format(name, MAILGUN_DOMAIN_NAME),
-    "to": "jack@jackarendt.com",
-    "subject": "{}".format(subject),
-    "text": "Return Email: {}\n\n{}".format(email, message)
+    'to': 'jack@jackarendt.com',
+    'subject': '{}'.format(subject),
+    'text': 'Return Email: {}\n\n{}'.format(email, message)
   }
 
+  # Post the mail form.
   resp, content = http.request(url, 'POST', urlencode(data),
                                headers={'Content-Type': 'application/x-www-form-urlencoded'})
 
+  # Return an error if something goes wrong.
   if resp.status != 200:
-    print content
     retval = {'success' : False, 'message' : 'Something went wrong. Try again later.'}
     return json.dumps(retval)
 
+  # Return that the message was successfully sent.
   retval = {'success' : True, 'message' : 'Thank you, I\'ll be in touch shortly.'}
   return json.dumps(retval)
 
