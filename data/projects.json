@@ -12,9 +12,10 @@
     ],
     "frameworks" : [
       "Blaze",
-      "Flume",
       "Protobuffers",
-      "S2 - Google Maps"
+      "RPC",
+      "Flume",
+      "TensorFlow"
     ],
     "image_url" : "/projects/googlex.png",
     "round_corners" : false,

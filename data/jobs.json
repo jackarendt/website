@@ -12,7 +12,9 @@
 		"frameworks": [
 			"Blaze",
 			"Protobuffers",
-			"RPC"
+			"RPC",
+			"Flume",
+      "TensorFlow"
 		],
 		"description": [
 			[
