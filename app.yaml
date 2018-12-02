@@ -2,12 +2,8 @@ runtime: python27
 api_version: 1
 threadsafe: true
 
-manual_scaling:
-  instances: 1
-
-# Comment out when pushing to prod
 resources:
- cpu: .5
+ cpu: .25
  memory_gb: 0.18
  disk_size_gb: 10
 
